@@ -1,17 +1,15 @@
 import React from "react";
-import { BiSearch, BiChevronDown, BiMenu } from "react-icons/bi";
+import { BiSearch, BiChevronDown, BiMenu, BiShareAlt, BiArrowBack } from "react-icons/bi";
 
 function Navsm() {
     return (
         <>
             <div className='text-white flex items-center justify-between'>
-                <div>
-                    <h3 className='text-xl text-bold'>It All Starts Here!</h3>
-                    <span className="text-gray-400 text-xs flex items-center">
-                        Jhansi, U.P. <BiChevronDown />
-                    </span>
+                <div className='flex items-center gap-2'>
+                    <BiArrowBack className='text-md'/>
+                    <h3 className='text-xl text-bold'>Fast and Furious 9</h3>
                 </div>
-                <BiSearch className='text-2xl'/>
+                <BiShareAlt className='text-2xl'/>
             </div>
         </>
     );
@@ -54,17 +52,17 @@ function Navmdlg() {
     );
 }
 
-function Navbar() {
+function MovieNavbar() {
     return (
         <>
-            <nav className="bg-darkback-700 py-3">
+            <nav className="bg-darkback-700 py-3 px-2">
                 {/* Mobile view */}
-                <div className="md:hidden px-4">
+                <div className="lg:hidden px-4">
                     <Navsm />
                 </div>
 
                 {/* Tab and laptop view */}
-                <div className="hidden md:flex w-full">
+                <div className="hidden lg:flex w-full">
                     <Navmdlg />
                 </div>
             </nav>
@@ -72,4 +70,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default MovieNavbar;

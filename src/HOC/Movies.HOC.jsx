@@ -1,23 +1,23 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import DefaultLayout from "../layouts/Default.Layout";
+import MoviesLayout from "../layouts/Movies.Layout";
 
 //component name should always start with capital letter like in DefaultHoc and DefaultLayout thats why we renamed
 //the component parameter below as Component
 
-const DefaultHOC = ({ component: Component, ...rest }) => {
+const MoviesHOC = ({ component: Component, ...rest }) => {
     return (
         <>
             <Route
                 {...rest}
                 component={(props) => (
-                    <DefaultLayout {...props}>
+                    <MoviesLayout {...props}>
                         <Component {...props} />
-                    </DefaultLayout>
+                    </MoviesLayout>
                 )}
             />
         </>
     );
 };
 
-export default DefaultHOC;
+export default MoviesHOC;

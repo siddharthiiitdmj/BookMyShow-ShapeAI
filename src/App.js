@@ -1,18 +1,24 @@
-import React from 'react';
-import DefaultHOC from './HOC/Default.HOC';
+import React from "react";
 
-function HomePage (props) {
-  return <h1>This is Home Page</h1>;
-}
-function ContactPage (props) {
-  return <h1>This is Contact Page</h1>;
-}
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+//Higher Order Components
+import DefaultHOC from "./HOC/Default.HOC";
+import MoviesHOC from "./HOC/Movies.HOC";
+
+//Pages
+import HomePage from "./Pages/Home.Page";
+import MoviePage from "./Pages/Movie.Page";
 
 function App() {
-  return <>
-    <DefaultHOC path="/home" exact component={HomePage} />
-    <DefaultHOC path="/contact" exact component={ContactPage} />
-  </>
+    return (
+        <>
+            <DefaultHOC path="/" exact component={HomePage} />
+            <MoviesHOC path="/movie/:id" exact component={MoviePage} />
+        </>
+    );
 }
 
 export default App;
