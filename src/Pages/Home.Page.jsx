@@ -129,6 +129,69 @@ function HomePage() {
         },
     ];
 
+    const outdoorEventsPosters = [
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCA4IFNlcCBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00308012-gyrasynfmw-portrait.jpg",
+            title: "RWC 2023 France",
+            subTitle: "Multiple Venues",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxNCBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312600-ekqqaeqkhc-portrait.jpg",
+            title: "Quarter-Final 1 and 3, Marseille",
+            subTitle: "Stade Velodrome",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzIE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314575-qkxshtaxdm-portrait.jpg",
+            title: "Mahatma Virtual Marathon - Get Medal by Courier",
+            subTitle: "Your Place and Your Time: India",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCA4IFNlcCBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00308012-gyrasynfmw-portrait.jpg",
+            title: "RWC 2023 France",
+            subTitle: "Multiple Venues",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxNCBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312600-ekqqaeqkhc-portrait.jpg",
+            title: "Quarter-Final 1 and 3, Marseille",
+            subTitle: "Stade Velodrome",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzIE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314575-qkxshtaxdm-portrait.jpg",
+            title: "Mahatma Virtual Marathon - Get Medal by Courier",
+            subTitle: "Your Place and Your Time: India",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCA4IFNlcCBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00308012-gyrasynfmw-portrait.jpg",
+            title: "RWC 2023 France",
+            subTitle: "Multiple Venues",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxNCBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312600-ekqqaeqkhc-portrait.jpg",
+            title: "Quarter-Final 1 and 3, Marseille",
+            subTitle: "Stade Velodrome",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzIE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314575-qkxshtaxdm-portrait.jpg",
+            title: "Mahatma Virtual Marathon - Get Medal by Courier",
+            subTitle: "Your Place and Your Time: India",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCA4IFNlcCBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00308012-gyrasynfmw-portrait.jpg",
+            title: "RWC 2023 France",
+            subTitle: "Multiple Venues",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxNCBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312600-ekqqaeqkhc-portrait.jpg",
+            title: "Quarter-Final 1 and 3, Marseille",
+            subTitle: "Stade Velodrome",
+        },
+        {
+            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzIE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314575-qkxshtaxdm-portrait.jpg",
+            title: "Mahatma Virtual Marathon - Get Medal by Courier",
+            subTitle: "Your Place and Your Time: India",
+        },
+    ];
+
     return (
         <>
             <HeroCarousel />
@@ -162,6 +225,15 @@ function HomePage() {
                         darkTheme={true}
                     />
                 </div>
+            </div>
+
+            <div className="container mx-auto my-8">
+                <PosterSlider
+                    posters={outdoorEventsPosters}
+                    title="OutDoor Events"
+                    subtitle=""
+                    darkTheme={false}
+                />
             </div>
 
         </>
