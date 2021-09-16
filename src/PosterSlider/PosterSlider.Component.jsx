@@ -12,31 +12,33 @@ const PosterSlider = (props) => {
         InitialSlide: 0,
         responsive: [
             {
-                breakpoints: 1024,
+                breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 2,
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
                     infinite: true,
                 },
             },
             {
-                breakpoints: 600,
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                 },
             },
             {
-                breakpoints: 480,
+                breakpoint: 480,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                 },
             },
         ],
     };
 
-    const {posters, title, subtitle, darkTheme} = props;
+    const {posters, title, subtitle, darkTheme, config} = props;
+
+    const curSettings = config ? config : settings;
 
     return (
         <>
@@ -56,7 +58,7 @@ const PosterSlider = (props) => {
                     {subtitle}
                 </p>
             </div>
-            <Slider {...settings}>
+            <Slider {...curSettings}>
                 {posters.map((poster) => (
                     <Poster {...poster} darkTheme={darkTheme} />
                 ))}
