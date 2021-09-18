@@ -5,11 +5,11 @@ import Poster from "../Poster/Poster.Component";
 const Plays = () => {
     return(
     <>
-        <div className="container mx-auto px-4">
-            <div className="w-full lg:flex lg:flex-row-reverse">
-                <div className="lg:w-3/4">
+        <div className="container mx-auto my-9">
+            <div className="w-full lg:flex my-3 lg:flex-row-reverse gap-5">
+                <div className="lg:w-3/4 bg-white rounded p-5">
                     <h2 className="text-2xl font-bold mb-4">
-                        Plays in Jhansi, Uttar Pradesh
+                        Plays in Jhansi
                     </h2>
                     <div className="flex flex-wrap">
                         <div className="w-1/2 md:w-1/3 lg:w-3/12 my-3">
@@ -64,12 +64,12 @@ const Plays = () => {
                     </div>
                 </div>
 
-                <div className='lg:w-3/12'>
+                <div className='lg:w-3/12 bg-white rounded p-5'>
                     <h2 className='text-2xl font-bold mb-4'>Filters</h2>
-                    <div>
+                    <div className='my-2'>
                         <PlayFilter title='Date' tags={["Today", "Tomorrow", "This Weekend"]} />
                     </div>
-                    <div>
+                    <div className='my-2'>
                         <PlayFilter title='Language' tags={["Hindi", "English", "Punjabi"]} />
                     </div>
                 </div>

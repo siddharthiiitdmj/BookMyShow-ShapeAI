@@ -24,7 +24,7 @@ function Navmdlg() {
                 <div className="flex w-1/2 gap-3 items-center justify-between">
                     <div className="w-1/4 h-10">
                         <img
-                            src="https://png2.cleanpng.com/sh/438416ba3915a20502b46c1f6eaa30cb/L0KzQYm3VMA3N5Zqj5H0aYP2gLBuTfJwd5xykeVxb4ewhrr6gftpaaFmjNDqbT33ebTyhgQua5DyiNN3eT3mf8b3jB4ue5l0jAU2NXHmR7S5hMgyPJc3SaM3MUO5QoOAUsMyPWM4SKY5OUi3QIm8WL5xdpg=/kisspng-bookmyshow-visakhapatnam-ticket-company-coupon-shows-5ac7c2d814f211.1362272315230409840858.png"
+                            src='https://png2.cleanpng.com/sh/c6931d67db2330c48ac32f86dc9e0730/L0KzQYm3VMA3N5Zqj5H0aYP2gLBuTfJwd5xykeVxb4ewhrr6gftpaaFmjNDqbT33ebTyhgQua5DyiNN3eT3mf8b3jB4ue5l0jAU2NXHmR7S5hMgyPJc3SaM3MUO5QoOAUsMyPWM4SKY5OUi3QIm8WL5xdpg=/kisspng-bookmyshow-visakhapatnam-ticket-company-coupon-shows-5ac7c2d814f211.1362272315230409840858.png'
                             alt="logo"
                             className="w-full h-full cursor-pointer"
                         />
