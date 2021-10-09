@@ -1,44 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeroSlider from "react-slick";
-// import { NextArrow, PrevArrow } from "./Arrows.Component";
-
-function NextArrow(props) {
-    return (
-        <>
-            <div
-                className={props.className}
-                style={{ ...props.style }}
-                onClick={props.onClick}
-            />
-        </>
-    );
-}
-
-function PrevArrow(props) {
-    return (
-        <>
-            <div
-                className={props.className}
-                style={{ ...props.style }}
-                onClick={props.onClick}
-            />
-        </>
-    );
-}
+import axios from "axios";
+import { NextArrow, PrevArrow } from "./Arrows.Component";
 
 const HeroCarousel = () => {
-    const [images, setImages] = useState([
-        "https://in.bmscdn.com/promotions/cms/creatives/1630997301576_moviethailavi_incinemasthisfridayknowmore_webshowcase_1240x300_7sep.jpg",
-        "https://in.bmscdn.com/promotions/cms/creatives/1629830049996_celebfiecruisewiththestarsrevised_webshowcase_1240x300_24aug.jpg",
-        "https://in.bmscdn.com/promotions/cms/creatives/1630909571292_shangchiunderthestars_pvrdrive_webshowcase_1240x300.jpg",
-        "https://in.bmscdn.com/promotions/cms/creatives/1630951639039_chokhihavelitheurbanvillageexperience_webshowcase_1240x300_6sep.jpg",
-    ]);
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        const getNowPlaying = async () => {
+            const nowPlaying = await axios.get("/movie/now_playing");
+            setImages(nowPlaying.data.results);
+        };
+
+        getNowPlaying();
+    }, []);
 
     const settingsLG = {
         arrows: true,
         autoplay: true,
         centerMode: true,
-        centerPadding: "6%",
+        centerPadding: "15%",
         slidesToShow: 1,
         dots: true,
         infinite: true,
@@ -66,7 +47,7 @@ const HeroCarousel = () => {
                         return (
                             <div className="w-full h-56 md:h-80 px-1 py-3">
                                 <img
-                                    src={image}
+                                    src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`}
                                     alt="HeroBanner"
                                     className="w-full h-full rounded-md object-center"
                                 />
@@ -82,7 +63,7 @@ const HeroCarousel = () => {
                         return (
                             <div className="w-full h-96 px-2 py-3">
                                 <img
-                                    src={image}
+                                    src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`}
                                     alt="HeroBanner"
                                     className="w-full h-full rounded-md object-center"
                                 />

@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import MovieInfo from "./MovieInfo.Component";
+import { MovieContext } from "../../Context/Movie.Context";
 
 const MovieHero = () => {
-    const [movie, setMovie] = useState({
-        id: "bsdj",
-        movie_title: "Fast and Furious 9",
-        overview:
-            "2h 23m • Action, Adventure, Crime, Thriller • UA • 2 Sep, 2021",
-        backdrop_path:
-            "https://in.bmscdn.com/iedb/movies/images/mobile/listing/medium/fast-and-furious-9-et00056556-14-07-2021-07-41-33.jpg",
-        poster_path:
-            "https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/fast-and-furious-9-et00056556-14-07-2021-07-41-33.jpg",
-    });
+    const { movie } = useContext(MovieContext);
+    const genres = movie.genres?.map(({name}) => name).join(", ");
+    const time = movie.runtime;
     return (
         <>
             <div>
                 {/* mobile and tablet view */}
                 <div className="lg:hidden w-full">
                     <img
-                        src={movie.backdrop_path}
+                        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                         alt="movie poster"
                         className="m-4 rounded"
                         style={{ width: "calc(100% - 2rem)" }}
@@ -28,8 +22,8 @@ const MovieHero = () => {
                     <div className="flex flex-col-reverse gap-3 px-4 my-3">
                         <div className="text-black flex flex-col gap-2 md:px-4">
                             <h4 className="font-semibold">4k ratings</h4>
-                            <h4>English, Hindi, Kannada, Tamil, Telugu</h4>
-                            <h4>{movie.overview}</h4>
+                            <h4>English • Hindi</h4>
+                            <h4>{parseInt(time / 60)}h {time % 60}m • {genres} • {movie.release_date}</h4>
                         </div>
                     </div>
                     <div className="flex items-center gap-3 px-4 md:w-screen text-xl">
@@ -56,20 +50,20 @@ const MovieHero = () => {
                     ></div>
 
                     <div className="absolute z-30 left-24 top-10 flex items-center gap-10">
-                        <div className="w-64 h-96">
+                        <div className="h-96 w-72">
                             <img
-                                src={movie.poster_path}
+                                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                                 alt="Movie Poster"
                                 className="w-full h-full rounded-xl"
                             />
                         </div>
                         <div>
-                            <MovieInfo movie={movie} />
+                            <MovieInfo movie={movie} genres={genres}/>
                         </div>
                     </div>
 
                     <img
-                        src={movie.backdrop_path}
+                        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                         alt="Background poster"
                         className="w-full h-full"
                     />

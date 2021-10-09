@@ -9,7 +9,7 @@ const PosterSlider = (props) => {
         arrows: true,
         slidesToShow: 5,
         slidesToScroll: 4,
-        InitialSlide: 0,
+        InitialSlide: 4,
         responsive: [
             {
                 breakpoint: 1024,

@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MovieHero from "../components/MovieHero/MovieHero.Component";
 import { FaCcMastercard, FaCcVisa } from "react-icons/fa";
 import Slider from "react-slick";
 import Cast from "../components/Cast/Cast.Component";
 import PosterSlider from "../PosterSlider/PosterSlider.Component";
+import { MovieContext } from "../Context/Movie.Context";
+import axios from "axios";
 
 const MoviePage = () => {
+
+    const {movie} = useContext(MovieContext);
+    // console.log(movie);
+    const id = movie.id;
+
     const castSettings = {
         infinite: false,
         speed: 500,
@@ -24,7 +31,7 @@ const MoviePage = () => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 5,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2,
                 },
@@ -39,50 +46,36 @@ const MoviePage = () => {
         ],
     };
 
-    const cast = [
-        {
-            profile_path:
-                "https://media.vanityfair.com/photos/5f6e0d388f3d1388648ddf94/4:3/w_1779,h_1334,c_limit/vin.jpg",
-            original_name: "Vin Diesel",
-            character: "Dominic Toretto",
-        },
-        {
-            profile_path:
-                "https://media.vanityfair.com/photos/5f6e0d388f3d1388648ddf94/4:3/w_1779,h_1334,c_limit/vin.jpg",
-            original_name: "Vin Diesel",
-            character: "Dominic Toretto",
-        },
-        {
-            profile_path:
-                "https://media.vanityfair.com/photos/5f6e0d388f3d1388648ddf94/4:3/w_1779,h_1334,c_limit/vin.jpg",
-            original_name: "Vin Diesel",
-            character: "Dominic Toretto",
-        },
-        {
-            profile_path:
-                "https://media.vanityfair.com/photos/5f6e0d388f3d1388648ddf94/4:3/w_1779,h_1334,c_limit/vin.jpg",
-            original_name: "Vin Diesel",
-            character: "Dominic Toretto",
-        },
-        {
-            profile_path:
-                "https://media.vanityfair.com/photos/5f6e0d388f3d1388648ddf94/4:3/w_1779,h_1334,c_limit/vin.jpg",
-            original_name: "Vin Diesel",
-            character: "Dominic Toretto",
-        },
-        {
-            profile_path:
-                "https://media.vanityfair.com/photos/5f6e0d388f3d1388648ddf94/4:3/w_1779,h_1334,c_limit/vin.jpg",
-            original_name: "Vin Diesel",
-            character: "Dominic Toretto",
-        },
-        {
-            profile_path:
-                "https://media.vanityfair.com/photos/5f6e0d388f3d1388648ddf94/4:3/w_1779,h_1334,c_limit/vin.jpg",
-            original_name: "Vin Diesel",
-            character: "Dominic Toretto",
-        },
-    ];
+    const [movieCast, setCast] = useState([]);
+    useEffect(() => {
+        const movieData = async() => {
+            const castData = await axios.get(`/movie/${id}/credits`);
+            setCast(castData.data.cast);
+        };
+
+        movieData();
+    }, [id]);
+
+    const [similarMovies, setSimilarMovies] = useState([]);
+    useEffect(() => {
+        const movieData = async() => {
+            const similarData = await axios.get(`/movie/${id}/similar`);
+            setSimilarMovies(similarData.data.results);
+        };
+
+        movieData();
+    }, [id]);
+
+    const [recommendedMovies, setRecommendedMovies] = useState([]);
+    useEffect(() => {
+        const movieData = async() => {
+            const recommendedData = await axios.get(`/movie/${id}/recommendations`);
+            setRecommendedMovies(recommendedData.data.results);
+        };
+
+        movieData();
+    }, [id]);
+
 
     const settings = {
         infinite: false,
@@ -117,39 +110,6 @@ const MoviePage = () => {
         ],
     };
 
-    const similarMovies = [
-        {
-            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxM2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00056556-cmljhpnhcd-portrait.jpg",
-            title: "Fast and Furious 9",
-            subtitle: "Action / Adventure / Crime / Thriller",
-        },
-        {
-            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxM2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00056556-cmljhpnhcd-portrait.jpg",
-            title: "Fast and Furious 9",
-            subtitle: "Action / Adventure / Crime / Thriller",
-        },
-        {
-            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxM2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00056556-cmljhpnhcd-portrait.jpg",
-            title: "Fast and Furious 9",
-            subtitle: "Action / Adventure / Crime / Thriller",
-        },
-        {
-            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxM2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00056556-cmljhpnhcd-portrait.jpg",
-            title: "Fast and Furious 9",
-            subtitle: "Action / Adventure / Crime / Thriller",
-        },
-        {
-            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxM2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00056556-cmljhpnhcd-portrait.jpg",
-            title: "Fast and Furious 9",
-            subtitle: "Action / Adventure / Crime / Thriller",
-        },
-        {
-            src: "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxM2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00056556-cmljhpnhcd-portrait.jpg",
-            title: "Fast and Furious 9",
-            subtitle: "Action / Adventure / Crime / Thriller",
-        },
-    ];
-
     return (
         <>
             <MovieHero />
@@ -159,10 +119,7 @@ const MoviePage = () => {
                         About the movie
                     </h1>
                     <p>
-                        Dom`s peaceful life with his wife Letty and son Brian is
-                        shattered when Dom`s past catches up to him. The gang is
-                        up against the most skilled assassin and
-                        high-performance driver - his little brother Jakob.
+                        {movie.overview}
                     </p>
                 </div>
 
@@ -216,9 +173,9 @@ const MoviePage = () => {
                         Cast and Crew
                     </h2>
                     <Slider {...castSettings}>
-                        {cast.map((data) => (
+                        {movieCast.map((data) => (
                             <Cast
-                                image={data.profile_path}
+                                image={`https://image.tmdb.org/t/p/original${data.profile_path}`}
                                 castName={data.original_name}
                                 role={data.character}
                             />
@@ -247,7 +204,7 @@ const MoviePage = () => {
                     <PosterSlider
                         config={settings}
                         title="BMS XCLUSIVE"
-                        posters={similarMovies}
+                        posters={recommendedMovies}
                         isDark={false}
                     />
                 </div>

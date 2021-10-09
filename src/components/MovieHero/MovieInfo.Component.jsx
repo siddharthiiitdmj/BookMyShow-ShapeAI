@@ -1,6 +1,7 @@
 import React from "react";
 
-const MovieInfo = ({ movie }) => {
+const MovieInfo = ({ movie, genres }) => {
+    const time = movie.runtime;
     return (
         <>
             <div className="flex flex-col gap-8">
@@ -9,8 +10,8 @@ const MovieInfo = ({ movie }) => {
                 </h1>
                 <div className="flex flex-col gap-5 text-white">
                     <h4 className="font-semibold">4k ratings</h4>
-                    <h4>English, Hindi, Kannada, Tamil, Telugu</h4>
-                    <h4>{movie.overview}</h4>
+                    <h4>English • Hindi</h4>
+                    <h4>{parseInt(time / 60)}h {time % 60}m  •  {genres}  •  {movie.release_date} </h4>
                 </div>
                 <div className="flex items-center gap-3 w-full">
                     <button className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg">
